@@ -23,5 +23,17 @@ const streamClient=StreamChat.getInstance(apiKey,apiSecret);
 }
 module.exports={upsertStreamUser}
 
-//Do it later
-// export const generateStreamToken=async(userId)=>{};
+
+const generateStreamToken=async(userId)=>{
+
+try{
+        //Ensure UserId is a String
+   const userIdStr=userId.toString();
+   return streamClient.createToken(userIdStr);
+}
+catch(error){
+    console.log("Error generating Stream token", error)
+}
+
+};
+module.exports={upsertStreamUser,generateStreamToken}

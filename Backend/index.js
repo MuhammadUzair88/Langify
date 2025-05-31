@@ -17,10 +17,12 @@ app.use(express.json());
 //Routes
 const authRoutes=require('./routes/authRoutes');
 const UserRoutes=require('./routes/UserRoutes');
+const ChatRoutes=require('./routes/ChatRoutes')
 
 
 app.use('/api/auth',authRoutes);
 app.use('/api/users',UserRoutes);
+app.use('/api/chat',ChatRoutes);
 
 
 //start Server
